@@ -23,11 +23,11 @@ markdown: kramdown
 highlighter: rouge
 
 # Setup
-title: Developer Record
+title: Devlog
 tagline: 'A Jekyll theme'
 email: ssej0221@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  newbie developer_개발자 지망생
+description: > #>-  this means to ignore newlines until "baseurl:"
+  newbie developer
 baseurl: "" # the subpath of your site, e.g. /blog
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -40,7 +40,7 @@ github_username:  jekyll
 
 author:
   name:           'Eunjee Shin'
-  url:            https://devejs.github.io
+  url:            https://devejslife.blogspot.com
 
 paginate:         5
 # paginate_path:    '/page:num'
@@ -79,3 +79,7 @@ sidebar_home_link:  true
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# add disqus
+disqus:
+  shortname: my-disqus-shortname
