@@ -4,7 +4,7 @@ title: Before Start
 category: Training
 ---
 *Publishing Date: 2020-05-02*
-
+*이 글은 현장실습 당시 기록을 바탕으로 나중에 재구성해 포스팅함*
 
 ## 현장실습 시작 전
 *2020-01-20~2020-01-31*
