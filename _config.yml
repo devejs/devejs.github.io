@@ -26,8 +26,9 @@ highlighter: rouge
 title: Devlog
 tagline: 'A Jekyll theme'
 email: ssej0221@gmail.com
-description: > #>-  this means to ignore newlines until "baseurl:"
-  newbie developer
+description: |- #>-  this means to ignore newlines until "baseurl:"
+  newbie developer<br>
+  초짜 개발자 지망생   
 baseurl: "" # the subpath of your site, e.g. /blog
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -35,8 +36,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
                   # other pages at root, see the paginate_path and
                   # sidebar_blog_link below.
 url: "https://devejs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username:
+github_username:  devejs
 
 author:
   name:           'Eunjee Shin'
