@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Swift] Optional
+title: Swift) Optional
 category: iOS
 ---
 *Publishing Date:2020-09-08*
