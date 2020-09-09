@@ -9,7 +9,7 @@ category: iOS
 말 그대로 `옵션`, 즉 값이 있을 수도, 없을 수도 있다는 것을 의미한다.
 
 #### NullPointException
-* nil  
+* nil   
 nil은 `값이 없음`을 나타내는 키워드이다. Swift에서는 `NULL`을 nil로 표기한다. 어떤 변수가 nil일 때 해당 변수에 접근하면 `NullPointException`이 발생한다.
 * NullPointException  
 
@@ -76,4 +76,23 @@ opValue?.secondValue?.opFunc()
 ### 궁금했던 점
 1. 옵셔널 자체를 하나의 데이터 타입으로 볼 수 있나?
   - 옵셔널 내부에 nil과 Wrapped가 들어있잖아
-2. ...
+
+### 피어세션 후 보완사항
+1. 옵셔널은 데이터 타입인가?  
+-> 엄밀히 말해서 데이터 타입은 아니고, 그냥 `타입`이다.  
+애플 문서에 따르면, Swift에는 두 가지 `타입`이 있다.  
+
+  * Named Type
+  * Compound Type
+
+Named Type은 정의될 때 특별한 이름을 받는 놈들이다. `classes`, `structures`, `enumerations`, `protocol` 같은 친구들. 그리고 이 친구들뿐 아니라 Swift Standard Library는 많이 사용되는 `arrays`, `dictionaries`, `optional values` 등을 정의한다고 하니 옵셔널은 Named Type 되시겠다.
+
+그렇다면 데이터 타입은? 다른 언어에서 원시 자료형으로 묶이는 number, char, String(아닌 언어도 있다) 등이 데이터 타입이다. 그리고 이 데이터 타입 역시 Named Type이다.
+
+> 뭐라고요?
+
+아직 정확한 레퍼런스를 찾지 못했기 때문에 내 뇌피셜로 적자면, 부분집합으로 생각하기로 했다. Named Type이라고 해서 optional이 Data Type인 건 아니니까.  
+
+![요런 느낌으로다가](/assets/스크린샷%202020-09-10%20오전%207.01.28.png)
+
+데이터 타입은 좀 더 심도있게 공부해서 추가 포스팅하기로!
