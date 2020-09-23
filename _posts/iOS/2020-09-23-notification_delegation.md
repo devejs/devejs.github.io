@@ -6,12 +6,14 @@ category: iOS
 *Publishing Date:2020-09-24*
 
 ### 배경지식
-[Delegation](https://devejs.github.io/ios/2020/09/16/delegation.html)
+[Delegation](https://devejs.github.io/ios/2020/09/16/delegation.html)  
 [Notification](https://devejs.github.io/ios/2020/09/23/swift-notification.html)
 
 ### 차이점
 1. 관계  
-`Delegate`는 위임되는 객체와 위임하는 객체간 1:1관계, `NotificationCenter`는 알림을 보내는 객체와 등록된 객체들간 1:n 관계를 가진다.
+`Delegate`는 위임되는 객체와 위임하는 객체간 1:1관계, `NotificationCenter`는 알림을 보내는 객체와 등록된 객체들간 1:n 관계를 가진다.  
+
+
 ```
 // Delegate
 @protocol SomeDelegate
