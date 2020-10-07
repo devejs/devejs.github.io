@@ -5,6 +5,9 @@ category: iOS
 ---
 *Publishing Date:2020-10-03*
 
+### 배경지식
+
+
 ### 프로토콜이란?
 > 특정 기능을 하기 위한 메소드, 프로퍼티 및 다른 요구 조건들의 청사진
 > 변수와 함수의 list
@@ -23,7 +26,8 @@ protocol SomeProtocol : InheritedProtocol, InheritedProtocol2 {
 ### 프로토콜을 사용하는 이유
 1. MVC 패턴과 같은 blind communication에서 효과적  
 2. 권한을 주는데 유용함  
-`Hashable`
+`Hashable`  
+[자세한 설명은 여기서]()
 3. 다중 상속 가능  
 4. Type 정의  
 어떤 프로토콜을 채택하여 구현한 객체는 *해당 프로토콜 타입* 이다.
