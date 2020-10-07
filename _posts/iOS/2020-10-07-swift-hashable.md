@@ -58,14 +58,28 @@ Swift 4.1 이전까지는 자동으로 구현되지 않아 반드시 사용자�
 `Equatable`은 값의 비교가 가능함을 보장해주는 프로토콜이다. 이 프로토콜을 채택한 타입들은 `==` 연산자나 `!=` 연산자를 사용해 값을 비교할 수 있다. `Array`에서 `contains(_:)` 메소드를 사용할 수 있는 것도 `Array`가 `Equatable` 프로토콜을 채택하고 있기 때문이다.
 
 ### Equatable을 상속하는 이유
+어떤 객체가 `Hashable`하다는 것은 딕셔너리의 키 값으로 사용될 수 있다는 것, 즉 *구별될 수 있는 값* 이라는 뜻이다. 그렇다면 두 객체의 해시 값이 같다면 두 객체들은 같은 객체라고 할 수 있을까?    
+> `a == b`이면 `a.hashvalue == b.hashvalue` 은 참이다. 그러나 그 역은 성립하지 않는다.
+
+객체의 해시값이 같다는 사실은 두 객체가 같다는 것을 보장해주지 않는다. 따라서 `Hashable` 프로토콜은 `Equatable` 프로토콜을 상속하여 객체가 같기 위한 연산자를 정의해주는 것이다.
+
+**같다** 는 개념에 대해 추가 공부 필요  
+[여기 참고](http://www.spazcosoft.com/swift-equatable-hashable.md.html)
+
 
 ### Learn More...
 [이 블로그](https://baked-corn.tistory.com/123)에서 가져왔는데 내가 정확한 출처(애플 리소스 등)를 찾지 못한 사항들. 확인되면 수정할 것.  
 
-1. `a==b` 이면 `a.hashvalue == b.hashvalue` 는 참이고 역은 성립하지 않는다.   
+<!-- 1. `a==b` 이면 `a.hashvalue == b.hashvalue` 는 참이고 역은 성립하지 않는다.   
+-> [출처](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)는 찾음.  
+> A hash value is an Int value that is the same for all objects that compare equally, such that if a == b, the hash value of a is equal to the hash value of b. -->
+
+  <!-- 하지만 역이 성립하지 않는다는 건 누가 증명했지? 당연한건가..? -->
 2. 클래스는 컴파일러가 자동으로 `hash(into:)` 함수를 구현해주지 않는다.
 
 ### Reference
 [Apple Docs- Hashable](https://developer.apple.com/documentation/swift/hashable)
 [Apple Docs- Equatable](https://developer.apple.com/documentation/swift/equatable)
 [Apple Docs- Hasher](https://developer.apple.com/documentation/swift/hasher)
+[Stack Overflow](https://stackoverflow.com/questions/34915836/what-is-the-use-of-hashable-and-equatable-in-swift-when-to-use-which)
+[Swift Docs- Set(a==b)](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)
