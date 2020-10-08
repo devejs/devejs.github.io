@@ -117,25 +117,26 @@ class exClass{
 
 - Static 메모리  
 `Static 메소드 안에서는 Static 변수에만 접근 가능하다.`
-라고만 알고 있고 왜 그런지 생각해 본 적이 없었는데, 띄엄띄엄 배웠던 기초 지식을 종합해보면 답이 나왔다.
-기본적인 메모리의 구조는 다음과 같다.
-![메모리구조](http://tcpschool.com/lectures/img_c_memory_structure.png)
-(출처: TCPSchool)
+라고만 알고 있고 왜 그런지 생각해 본 적이 없었는데, 띄엄띄엄 배웠던 기초 지식을 종합해보면 답이 나왔다.  
+기본적인 메모리의 구조는 다음과 같다.  
+![메모리구조](http://tcpschool.com/lectures/img_c_memory_structure.png)  
+(출처: TCPSchool)  
 static 메소드와 변수는 프로그램이 컴파일될 때 데이터 메모리에 올라가고, 일반적으로 프로그램에서 사용하는 인스턴스 메소드/변수들은 힙 메모리에 생성된다. 메모리의 영역이 다르기 때문에 정적 메소드(데이터 메모리)에서 인스턴스 변수(힙 메모리)에 접근할 수 없는 것이다.
 
 - static, mutating  
-피어세션 중 피어님께서 좋은 질문을 해주셨다.
-구조체 내부에서 변수의 값을 변경하는 메소드를 선언할 경우, `mutating` 키워드를 반드시 붙여줘야 한다.
-[자세한 내용은 구조체 참고!^^!]()
-그런데 `static` 키워드가 붙은 구조체 메소드에도 `mutating` 키워드를 사용할까?
+피어세션 중 피어님께서 좋은 질문을 해주셨다.  
+구조체 내부에서 변수의 값을 변경하는 메소드를 선언할 경우, `mutating` 키워드를 반드시 붙여줘야 한다.  
+[자세한 내용은 구조체 참고!^^!](https://devejs.github.io/ios/2020/09/11/swift-struct.html)  
+\+ [관련 내용을 따로 포스팅을 팠다.](https://devejs.github.io/ios/2020/10/08/swift-mutating.html)
+그런데 `static` 키워드가 붙은 구조체 메소드에도 `mutating` 키워드를 사용할까?  
 실제 struct 내부에서 변수의 값을 변경하는 static 메소드에 `mutating` 키워드를 추가했을 때, xcode가 에러를 뿜어냈다.
 ```
 Static functions must not be declared mutating
 Replace 'mutating ' with ''
 ```
-즉, `static`과 `mutating`은 함께 사용할 수 없다.
+즉, `static`과 `mutating`은 함께 사용할 수 없다.  
 이 이유는 아마 struct에서 `mutating`을 사용하는 이유가 구조체가 값 타입으로 `복사`되기 때문인데, static 변수/메소드들은 그 타입 자체의 값이기 때문에 새로 인스턴스가 생성될 필요가 없어서인 것 같다.
 
 ### Reference
-[Swift Docs- Self Type](https://docs.swift.org/swift-book/ReferenceManual/Types.html#ID610)
-[Self- stack overflow](https://stackoverflow.com/questions/27863810/distinction-in-swift-between-uppercase-self-and-lowercase-self)
+[Swift Docs- Self Type](https://docs.swift.org/swift-book/ReferenceManual/Types.html#ID610)  
+[Self- stack overflow](https://stackoverflow.com/questions/27863810/distinction-in-swift-between-uppercase-self-and-lowercase-self)  
