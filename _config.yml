@@ -28,7 +28,7 @@ tagline: 'A Jekyll theme'
 email: ssej0221@gmail.com
 description: |- #>-  this means to ignore newlines until "baseurl:"
   newbie developer<br>
-  초짜 개발자 지망생   
+  초짜 개발자 지망생
 baseurl: "" # the subpath of your site, e.g. /blog
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -43,7 +43,7 @@ author:
   name:           'Eunjee Shin'
   url:            https://devejslife.blogspot.com
 
-paginate:         5
+paginate:         10
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
 
@@ -84,3 +84,6 @@ sidebar_home_link:  true
 # add disqus
 disqus:
   shortname: my-disqus-shortname
+
+# add google analytics
+google_analytics: 'UA-149837435-1'
