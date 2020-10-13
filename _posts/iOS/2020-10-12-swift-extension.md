@@ -36,7 +36,7 @@ extension SomeType {
 ***주의할 점***
 * Extension에 연산 프로퍼티는 추가가 가능하지만, 저장 프로퍼티는 추가할 수 없다.
 * 기존에 존재하던 프로퍼티에 [프로퍼티 감시자]()를 추가할 수 없다.
-* Extension에서 클래스 타입에 [이니셜라이저]()를 추가할 때, 편의 이니셜라이저만 추가할 수 있다. (지정 이니셜라이저는 반드시 클래스 구현부에 존재해야 함)
+* Extension에서 **클래스 타입** (값 타입은 관계 없음)에 [이니셜라이저]()를 추가할 때, 편의 이니셜라이저만 추가할 수 있다. (지정 이니셜라이저는 반드시 클래스 구현부에 존재해야 함)
 
 * 여러 기능 추가시 기능별로 각각 익스텐션 블록에 구현하는 것을 권장한다.
 
@@ -84,6 +84,24 @@ extension Int {
 }
 ```
 
+### 피어세션 내용 추가
+피어세션 진행 중 피어 한 분이 좋은 질문을 해 주셨다. `Extension`으로 확장한 클래스를 상속받는다면 확장한 메소드나 연산 프로퍼티를 사용할 수 있을까?
+<script src="https://gist.github.com/devejs/d9bb383c8ff0fd447a748259f1d111bb.js"></script>  
+결과적으로 말하자면 확장한 클래스를 상속받는다면 확장한 메소드를 사용할 수 있다.  
+해당 코드의 실행 결과는 다음과 같다.
+```
+> GrandParent
+first function
+> Parent
+override first function
+> Parent 2
+override first function
+Working Hard...
+> Child
+override first function
+Working Hard...
+Do additional Job
+```
 
 ### Reference
 [위키피디아- 상속](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
