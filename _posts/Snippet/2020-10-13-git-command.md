@@ -29,3 +29,21 @@ fatal: you must specify path(s) to restore
 // 가장 최근 커밋 취소
 git reset HEAD^
 ```
+
+### 로컬에서 깃 연결하기
+```
+git init
+git remote add origin <github_URL>
+git add *
+git commit -m "Commit message"
+git push --set-upstream origin master
+```
+push하기 전에 --set-upstream 을 해주지 않으면
+```
+fatal: 현재 브랜치 master에 업스트림 브랜치가 없습니다.
+현재 브랜치를 푸시하고 해당 리모트를 업스트림으로 지정하려면
+다음과 같이 하십시오.
+```
+위와 같은 오류 메세지가 뜬다.  
+이는 로컬에서 브랜치를 지정해주지 않았기 때문!  
+리포를 클론해오지 않고 바로 로컬에서 작업한 것을 깃헙 리포에 연결할 때 사용한다.
