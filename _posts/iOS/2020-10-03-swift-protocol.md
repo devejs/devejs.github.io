@@ -26,8 +26,7 @@ protocol SomeProtocol : InheritedProtocol, InheritedProtocol2 {
 ### 프로토콜을 사용하는 이유
 1. MVC 패턴과 같은 blind communication에서 효과적  
 2. 권한을 주는데 유용함  
-`Hashable`  
-[자세한 설명은 여기서]()
+`Hashable`: [자세한 설명은 여기서](https://devejs.github.io/ios/2020/10/07/swift-hashable.html)
 3. 다중 상속 가능  
 4. Type 정의  
 어떤 프로토콜을 채택하여 구현한 객체는 *해당 프로토콜 타입* 이다.

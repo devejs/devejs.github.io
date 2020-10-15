@@ -73,7 +73,7 @@ Swift에서 프로토콜은 지켜야하는 껍데기, 즉 인터페이스같은
 
 `traversed` 라는 단어가 무슨 느낌일지 좀 생각을 해봤는데 그냥 어렵게 생각하지 않고 간단히 생각하기로 했다. 배열을 가로지르는 게 배열을 순회하는 것 말고 더 있나?  
 결론적으로, 컬렉션도 시퀀스 프로토콜을 따르기 때문에 for..in에서 사용할 수 있다는 것이다.   
-위에서 봤다시피, Swift에서 지원하는 Collections는 세 가지다.
+위에서 봤다시피, Swift에서 지원하는 Collections는 세 가지다.  
 `Array, Dictionary, Set`
 
 해당 컬렉션들은 CS 자료구조 공부하면서 따로 다루는 게 나을 것 같아서 굳이 여기서 미주알 고주알 늘어놓지 않기로 한다.  
@@ -83,11 +83,11 @@ Swift에서 프로토콜은 지켜야하는 껍데기, 즉 인터페이스같은
 ### 궁금했던 점
 1. for in 반복문 사용할 때 [String]뿐만 아니라 그냥 시퀀스 타입이면 전부 사용 가능할텐데 에러 메세지에 나오는 Int의 의미는 뭘까? 인덱스?
 
-2. 시퀀스는 프로토콜인데 문서에 보면 Type이라고 한다. Swift에서 Type의 의미가 뭘까?
+2. 시퀀스는 프로토콜인데 문서에 보면 Type이라고 한다. Swift에서 Type의 의미가 뭘까?  
 -> 옵셔널이 데이터 타입인지 아닌지 공부하면서 같이 공부했다.  
 [여기로](https://devejs.github.io/ios/2020/09/07/swift-optional.html)
 
 ### References
-* [Apple Developer Document](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocFastEnumeration.html)
-* [Apple Developer- Sequence](https://developer.apple.com/documentation/swift/sequence)
-* [Swift Docs- Colleciton Types](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)
+* [Apple Developer Document](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocFastEnumeration.html)  
+* [Apple Developer- Sequence](https://developer.apple.com/documentation/swift/sequence)  
+* [Swift Docs- Colleciton Types](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)  

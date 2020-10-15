@@ -52,7 +52,7 @@ category: iOS
 > The Self type isn’t a specific type, but rather lets you conveniently refer to the current type without repeating or knowing that type’s name.
 > In a protocol declaration or a protocol member declaration, the Self type refers to the eventual type that conforms to the protocol.
 
-그런데 이 내용만으로는 대체 `self`와 `Self`가 무슨 차이가 있는지 잘 감이 안 왔다. 더 찾아보다보니 스위프트 문서의 두번째 문장에 더 집중하면 되는 것 같다.
+그런데 이 내용만으로는 대체 `self`와 `Self`가 무슨 차이가 있는지 잘 감이 안 왔다. 더 찾아보다보니 스위프트 문서의 두번째 문장에 더 집중하면 되는 것 같다.  
 다음 예시를 보자.
 ```
 class Superclass {
@@ -72,12 +72,12 @@ print(type(of: z.f()))
 // Prints "Subclass"
 ```
 이 예시는 링크한 스위프트 문서에서 가져왔다.
-`Superclass`의 `f` 메소드를 보면, `Self` 타입의 `self`를 리턴한다.
-상수 x는 Superclass의 인스턴스이므로 `x.f()`는 Superclass를 리턴한다.
-상수 y는 Subclass의 인스턴스이다. `y.f()`는 Subclass를 리턴한다.
-마지막으로 상수 z를 보자. 상수 z는 Superclass 타입이지만, Subclass의 인스턴스이다. `z.f()`가 반환하는 타입은 Superclass가 아니라 Subclass이다.
-즉, `프로토콜을 따르는 최종적인 타입`의 의미가 여기서 나온다. `Self`는 z의 컴파일시 타입인 Superclass가 아니라 런타임시 타입인 Subclass, 최종적인 타입을 참조한다는 것이다.
-와, 어렵다. 몇 번 더 써봐야 좀 들어올 것 같다.
+`Superclass`의 `f` 메소드를 보면, `Self` 타입의 `self`를 리턴한다.  
+상수 x는 Superclass의 인스턴스이므로 `x.f()`는 Superclass를 리턴한다.  
+상수 y는 Subclass의 인스턴스이다. `y.f()`는 Subclass를 리턴한다.  
+마지막으로 상수 z를 보자. 상수 z는 Superclass 타입이지만, Subclass의 인스턴스이다. `z.f()`가 반환하는 타입은 Superclass가 아니라 Subclass이다.  
+즉, `프로토콜을 따르는 최종적인 타입`의 의미가 여기서 나온다. `Self`는 z의 컴파일시 타입인 Superclass가 아니라 런타임시 타입인 Subclass, 최종적인 타입을 참조한다는 것이다.  
+와, 어렵다. 몇 번 더 써봐야 좀 들어올 것 같다.  
 
 이 내용을 참고한 스택 오버플로우에서 해당 내용에 관해 발표한 애플 WWDC 2015의 영상 링크를 알려줘서 적어놓는다.
 [나는 아직 못봤다. 16:05에 해당 내용이!](https://developer.apple.com/videos/play/wwdc2015/408/)
@@ -127,14 +127,14 @@ static 메소드와 변수는 프로그램이 컴파일될 때 데이터 메모�
 피어세션 중 피어님께서 좋은 질문을 해주셨다.  
 구조체 내부에서 변수의 값을 변경하는 메소드를 선언할 경우, `mutating` 키워드를 반드시 붙여줘야 한다.  
 [자세한 내용은 구조체 참고!^^!](https://devejs.github.io/ios/2020/09/11/swift-struct.html)  
-\+ [관련 내용을 따로 포스팅을 팠다.](https://devejs.github.io/ios/2020/10/08/swift-mutating.html)
+\+ [관련 내용을 따로 포스팅을 팠다.](https://devejs.github.io/ios/2020/10/08/swift-mutating.html)  
 그런데 `static` 키워드가 붙은 구조체 메소드에도 `mutating` 키워드를 사용할까?  
 실제 struct 내부에서 변수의 값을 변경하는 static 메소드에 `mutating` 키워드를 추가했을 때, xcode가 에러를 뿜어냈다.
 ```
 Static functions must not be declared mutating
 Replace 'mutating ' with ''
 ```
-즉, `static`과 `mutating`은 함께 사용할 수 없다.  
+즉, `static`과 `mutating`은 함께 사용할 수 없다.    
 이 이유는 아마 struct에서 `mutating`을 사용하는 이유가 구조체가 값 타입으로 `복사`되기 때문인데, static 변수/메소드들은 그 타입 자체의 값이기 때문에 새로 인스턴스가 생성될 필요가 없어서인 것 같다.
 
 ### Reference

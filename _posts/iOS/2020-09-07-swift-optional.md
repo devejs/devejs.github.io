@@ -32,7 +32,7 @@ public enum Optional<Wrapped> : ExpressibleByNulLiteral {
   ...
 }
 ```
-위 정의에 따르면, 옵셔널은 값을 갖는 케이스와 값을 갖지 않는 케이스로 나눌 수 있다. 값이 있는 경우(some), 연관값으로 Wrapped을 가진다. 즉, 값이 <b>옵셔널이라는 열거형에 래핑되어있다</b>는 것이다.
+위 정의에 따르면, 옵셔널은 값을 갖는 케이스와 값을 갖지 않는 케이스로 나눌 수 있다. 값이 있는 경우(some), 연관값으로 Wrapped을 가진다. 즉, 값이 <b>옵셔널이라는 열거형에 래핑되어있다</b>는 것이다.  
 
 * 옵셔널을 초기화하지 않으면 기본값은 nil
 * `??` : 값이 nil이면 `??` 뒤의 default값 사용
@@ -85,7 +85,7 @@ opValue?.secondValue?.opFunc()
   * Named Type
   * Compound Type
 
-Named Type은 정의될 때 특별한 이름을 받는 놈들이다. `classes`, `structures`, `enumerations`, `protocol` 같은 친구들. 그리고 이 친구들뿐 아니라 Swift Standard Library는 많이 사용되는 `arrays`, `dictionaries`, `optional values` 등을 정의한다고 하니 옵셔널은 Named Type 되시겠다.
+Named Type은 정의될 때 특별한 이름을 받는 놈들이다. `classes`, `structures`, `enumerations`, `protocol` 같은 친구들. 그리고 이 친구들뿐 아니라 Swift Standard Library는 많이 사용되는 `arrays`, `dictionaries`, `optional values` 등을 정의한다고 하니 옵셔널은 Named Type 되시겠다.  
 
 그렇다면 데이터 타입은? 다른 언어에서 원시 자료형으로 묶이는 number, char, String(아닌 언어도 있다) 등이 데이터 타입이다. 그리고 이 데이터 타입 역시 Named Type이다.
 
@@ -96,3 +96,6 @@ Named Type은 정의될 때 특별한 이름을 받는 놈들이다. `classes`, 
 ![요런 느낌으로다가](/assets/스크린샷%202020-09-10%20오전%207.01.28.png)
 
 데이터 타입은 좀 더 심도있게 공부해서 추가 포스팅하기로!
+
+### Reference
+[Apple Docs- Optional](https://developer.apple.com/documentation/swift/optional)

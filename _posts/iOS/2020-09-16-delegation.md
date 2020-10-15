@@ -24,7 +24,7 @@ Delegation 패턴은 객체지향 디자인 패턴중의 하나로 객체 구조
 <!-- Delegation인지 알지 못하고 사용하고 있었던 Delegation 중 하나는 `self`이다.
 this is done implicitly by having self in the delegate refer to the original (sending) object, not the delegate (receiving object) -->
 
-그렇다면 Delegation은 왜 사용할까?
+그렇다면 Delegation은 왜 사용할까?  
 처음에는 단순히 Delegation을 사용했던 상황(특정 뷰가 뷰 컨트롤러에게 처리를 맡긴 경우)만을 생각하고 뷰가 처리하기 어려운 상황에 처리할 수 있는 대리자를 만드는것인가 추측했다.
 그러나 Delegation의 정의에서 위와 같은 단순한 1차원적인 이유가 아니라 코드 재사용이라는 넓은 이유로 사용한다는 것을 알 수 있었다. 보통 객체 지향에서는 코드를 재사용하기 위해 상속을 하는데,
 
@@ -44,6 +44,6 @@ Delegate 패턴을 활용하는 경우를 예를 들어 설명
 
 
 ### Reference
-[Delegation Pattern](http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/delegation.html)
-[Delegate 이해에 도움이 된 글](https://magi82.github.io/ios-delegate/)
-[Observers](https://benoitpasquier.com/observer-design-pattern-swift/)
+[Delegation Pattern](http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/delegation.html)  
+[Delegate 이해에 도움이 된 글](https://magi82.github.io/ios-delegate/)  
+[Observers](https://benoitpasquier.com/observer-design-pattern-swift/)  

@@ -38,7 +38,7 @@ var createdStruct : StructName = StructName(number: Int, name: String)
 값 자체를 복사해서 전달
 따라서 값 타입의 데이터를 전달할 경우 메모리에 새 인스턴스가 생성됨. 생성된 새 인스턴스에 해당 값이 복사되어 들어감
 - 참조 타입  
-포인터와 유사한 개념. 값을 복사하는 것이 아니라 참조(주소)가 전달됨
+포인터와 유사한 개념. 값을 복사하는 것이 아니라 참조(주소)가 전달됨  
 따라서 새 인스턴스가 생성되지 않고 기존의 인스턴스 주소를 전달
 - 식별 연산자(`===`)  
 식별 연산자로 클래스의 인스턴스끼리 참조가 같은지 확인할 수 있다.
@@ -58,3 +58,5 @@ var createdStruct : StructName = StructName(number: Int, name: String)
 3. `extension` 가능
 4. 특정 프로토콜 채택 가능
 5. 서브스크립트 정의 가능
+
+### Reference
