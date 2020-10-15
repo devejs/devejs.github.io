@@ -41,18 +41,26 @@ Swift 문서에서는 오류 처리 항목에 해당 키워드가 설명되어 �
 ```
 defer test: function start
 function executing
+0
+defer in for
+1
+defer in for
 executed first
 executed second
 exit soon
 ```
 
-0. 호출 순서  
+1. 호출 순서  
 아래에 있는 `defer` 블록부터 실행되는 것을 확인할 수 있다.  
 
-1. defer 내부에 return 불가  
+2. defer 내부에 return 불가  
 첫 번째 `defer` 블록에서 바로 리턴했을 때, `'return' cannot transfer control out of defer statement` 오류를 알려준다. 리턴 문이 `defer` 구문 안에서는 바깥으로 함수의 종료를 명령할 수 없는 것이다.
 
-2. 실행되지 않는 코드
+3. 코드 블럭의 정의
+함수 내부에 for문이 있고, for문 안에 `defer` 구문이 존재한다. 이 `defer`문은 언제 실행될까?   
+자칫 잘못해서 이 `defer`문도 함수가 종료될 때 실행된다고 생각하면 안 된다. `defer`문은 **코드 블럭** 이 끝날 때 실행되므로, 하나의 코드 블럭을 형성하는 for문이 끝날 때 실행이 된다. 즉, for문이 돈 횟수를 출력한 후 `defer` 내부 프린트문이 출력되는 것을 볼 수 있다.
+
+4. 실행되지 않는 코드
 앞서 코드가 실행되는 것을 **보장** 해 준다고 했지만, 코드가 실행되지 않는 경우도 있다. 바로 `defer` 키워드에 실행 포인트가 도달하기도 전에 종료된 경우다.  
 마지막 `defer` 구문을 보면 실행되지 않는다. 해당 구문에 도달하기 전에 코드 블럭이 끝나버리기 때문이다. 그래서 xcode에서는 다음 warning을 뿜뿜하며 코드를 고치라고 권유해준다.
 ```
@@ -61,7 +69,7 @@ Replace 'defer' with 'do'
 - Code after 'return' will never be executed
 ```
 
-첫번째 경고에서는 블록 마지막에 있는 `defer` 구문이 곧바로 실행되므로 `do` 구문으로 바꾸라고 권유해준다. 실제로 17행의 `return`을 지우고 실행할 경우 `function executing...` 문장이 출력된 후 바로 `defer after return` 문장이 출력될 것이다.   
+첫번째 경고에서는 블록 마지막에 있는 `defer` 구문이 곧바로 실행되므로 `do` 구문으로 바꾸라고 권유해준다. 실제로 23행의 `return`을 지우고 실행할 경우 `function executing...` 문장이 출력된 후 바로 `defer after return` 문장이 출력될 것이다.   
 두번째 경고에서 `return` 뒤의 코드가 실행되지 않는다는 것을 알려준다.  
 xcode가 경고를 주는 건 다 이유가 있는 법, 가능하면 경고가 뜨지 않게 코딩하는 것이 좋다.
 
