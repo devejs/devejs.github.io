@@ -28,7 +28,14 @@ fatal: you must specify path(s) to restore
 ```
 // 가장 최근 커밋 취소
 git reset HEAD^
+// 옵션
+git reset --hard 커밋ID
+git reset --soft 커밋ID
+git reset --mixed 커밋ID
 ```
+* hard: 모든 내용 초기화(빡세게 초기화함)
+* soft: 커밋은 리셋했지만 코드는 변경되지 않음(약하게 초기화)
+* mixed: default; 커밋은 리셋했지만 변경된 내역이 남아 있음
 
 ### 로컬에서 깃 연결하기
 ```
@@ -36,7 +43,7 @@ git init
 git remote add origin <github_URL>
 git add *
 git commit -m "Commit message"
-git push --set-upstream origin master
+git push --set-upstream origin master(브랜치 이름)
 ```
 push하기 전에 --set-upstream 을 해주지 않으면
 ```
@@ -46,4 +53,9 @@ fatal: 현재 브랜치 master에 업스트림 브랜치가 없습니다.
 ```
 위와 같은 오류 메세지가 뜬다.  
 이는 로컬에서 브랜치를 지정해주지 않았기 때문!  
-리포를 클론해오지 않고 바로 로컬에서 작업한 것을 깃헙 리포에 연결할 때 사용한다.
+리포를 클론해오지 않고 바로 로컬에서 작업한 것을 깃헙 리포에 연결할 때 사용한다.  
+이 과정은 로컬에서 브랜치를 새로 따서 작업할 때도 반드시 필요하다. 해당 작업을 해주면  
+```
+'master(브랜치 이름)' 브랜치가 리모트의 'master(브랜치 이름)' 브랜치를 ('origin'에서) 따라가도록 설정되었습니다.
+```
+이런 식으로 뜨면서 연결이 된다. 
